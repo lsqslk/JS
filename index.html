@@ -3,12 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Classificação de Idade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #resultado {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <h1>Classifique sua Idade</h1>
+  
+  <!-- Campo para o usuário digitar a idade -->
+  <label for="idade">Digite sua idade: </label>
+  <input type="number" id="idade" placeholder="Sua idade">
+  <button onclick="classificarIdade()">Classificar</button>
+  
+  <!-- Exibir o resultado -->
+  <div id="resultado"></div>
+
   <script>
-    // Recebe a idade da pessoa
-    let idade = parseInt(prompt("Digite a sua idade:"));
+    function classificarIdade() {
+      // Pega o valor digitado pelo usuário
+      let idade = parseInt(document.getElementById("idade").value);
 
     // Verifica a categoria da idade usando if-else
     if (idade >= 0 && idade <= 12) {
